@@ -1,0 +1,31 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/../build/${presetName}",
+            "installDir": "${sourceDir}/../build/${presetName}/install/onnxruntime",
+            "cacheVariables": {
+                "CMAKE_DEBUG_POSTFIX": "d",
+                "CMAKE_POSITION_INDEPENDENT_CODE": "ON",
+                "BUILD_SHARED_LIBS": "OFF",
+                "onnxruntime_BUILD_SHARED_LIB": "ON",
+                "onnxruntime_USE_TELEMETRY": "OFF",
+                "onnxruntime_BUILD_UNIT_TESTS": "OFF",
+                "BUILD_ONNX_PYTHON": "OFF",
+                "PY_VERSION": "3",
+                "onnxruntime_USE_XNNPACK": "ON",
+                "CMAKE_PLATFORM_NO_VERSIONED_SONAME": "ON",
+                "BUILD_TESTING": "OFF",
+                "protobuf_INSTALL_EXAMPLES": "OFF"
+            }
+        }
+    ]
+}
