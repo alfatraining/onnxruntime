@@ -27,6 +27,13 @@
         POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
           "${DML_PACKAGE_DIR}/bin/${onnxruntime_target_platform}-win/${file}" $<TARGET_FILE_DIR:onnxruntime_providers_dml>)
+      # ------------- START alfaview -------------
+      # alfadeps patch: also install DirectML libs to destination dir
+      install(
+        FILES "${DML_PACKAGE_DIR}/bin/${onnxruntime_target_platform}-win/${file}"
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/
+      )
+      # ------------- END alfaview -------------
     endforeach()
   endif()
 

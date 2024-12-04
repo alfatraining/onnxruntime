@@ -135,7 +135,10 @@ endif()
 target_include_directories(onnxruntime PRIVATE ${ONNXRUNTIME_ROOT} PUBLIC "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/onnxruntime>")
 
 
-target_compile_definitions(onnxruntime PRIVATE FILE_NAME=\"onnxruntime.dll\")
+# ------------- START alfaview -------------
+target_compile_definitions(onnxruntime PRIVATE FILE_NAME=\"onnxruntime_av.dll\")
+set_target_properties(onnxruntime PROPERTIES OUTPUT_NAME "onnxruntime_av")
+# ------------- END alfaview -------------
 
 if(UNIX)
   if (APPLE)
