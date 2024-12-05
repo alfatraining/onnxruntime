@@ -92,6 +92,14 @@ if (onnxruntime_ENABLE_ATEN)
 endif()
 onnxruntime_add_include_to_target(onnxruntime_framework onnxruntime_common onnx onnx_proto ${PROTOBUF_LIB} flatbuffers::flatbuffers safeint_interface Boost::mp11 nlohmann_json::nlohmann_json)
 
+# ------------- START alfaview -------------
+# the onnxruntime developers are adding only the include directories of onnxruntime_common
+# to the framework target but that does not pull in the transitive include directories
+# therefore fails to open include file: onnxruntime_lora -> onnxruntime_framework -> onnxruntime_common -> absl
+# I don't know/understand why they didn't just use target_link_libraries like below and be done with it
+target_link_libraries(onnxruntime_framework onnxruntime_common)
+# ------------- END alfaview -------------
+
 if (onnxruntime_USE_MIMALLOC)
     target_link_libraries(onnxruntime_framework mimalloc-static)
 endif()
