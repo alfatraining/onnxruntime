@@ -16,7 +16,7 @@
                 "ONNX_USE_MSVC_STATIC_RUNTIME": "ON",
                 "protobuf_MSVC_STATIC_RUNTIME": "ON",
                 "onnxruntime_USE_DML": "ON",
-                "CMAKE_PREFIX_PATH": "${sourceDir}/../alfadeps/build-win-vs17/install",
+                "CMAKE_PREFIX_PATH": "${sourceDir}/../../alfadeps/build-win-vs17/install",
                 "CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE": "x64",
                 "CMAKE_GENERATOR_PLATFORM": "x64"
             }
