@@ -11,10 +11,12 @@
       "inherits": "common",
       "name": "macos-arm64-static",
       "cacheVariables": {
-        "CMAKE_OSX_ARCHITECTURES": "arm64"
+        "CMAKE_OSX_ARCHITECTURES": "arm64",
+        "ONNX_CUSTOM_PROTOC_EXECUTABLE": "${sourceDir}/../../alfadeps/build-macos-arm64-static/install/protobuf/bin/protoc",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/../../alfadeps/build-macos-arm64-static/install",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "10.15"
       },
       "environment": {
-        "MACOSX_DEPLOYMENT_TARGET": "10.13"
       }
     }
   ],
